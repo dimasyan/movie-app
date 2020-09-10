@@ -1,0 +1,35 @@
+<div class="movies">
+  <h1>List of movies</h1>
+
+  <div class="form-control">
+    <input type="text" placeholder="Find movie..." [(ngModel)]="searchStr">
+  </div>
+
+  <div class="filters">
+    <div class="form-check" *ngFor="let key of objectKeys(genres)">
+      <input
+        class="form-check-input"
+        name="genres"
+        type="checkbox"
+        [value]="key"
+        [id]="key"
+        (change)="updateChecked(key)"
+      >
+      <label [for]="key">{{genres[key]}}</label>
+    </div>
+  </div>
+
+  <div class="movies-list">
+    <div
+      class="movies-list-item"
+      *ngFor="let movie of movies | searchMovies:searchStr | filterMovies:genresChecked">
+      <app-movie
+        [movie]="movie"
+      ></app-movie>
+    </div>
+  </div>
+
+  <div *ngIf="(movies | searchMovies:searchStr).length === 0">
+    No movies found :(
+  </div>
+</div>

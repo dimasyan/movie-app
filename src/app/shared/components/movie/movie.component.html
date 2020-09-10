@@ -1,0 +1,14 @@
+<div class="card" [routerLink]="['/movie', movie.id]">
+
+  <div class="card-img">
+    <img [src]="movie.img | imgPath">
+  </div>
+  <div class="card-rate">{{movie.rate}}</div>
+  <div class="card-title">
+    <span>{{movie.name}}</span>
+  </div>
+
+  <div class="card-genre">
+    <small>{{movie.genres.join(', ')}}</small>
+  </div>
+</div>

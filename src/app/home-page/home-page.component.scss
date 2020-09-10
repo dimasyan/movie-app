@@ -1,0 +1,9 @@
+.movies {
+  max-width: 720px;
+  margin: 0 auto;
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+  }
+}

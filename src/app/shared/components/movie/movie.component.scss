@@ -1,0 +1,31 @@
+.card {
+  display: block;
+  position: relative;
+  border-radius: 5px;
+  cursor: pointer;
+  &-img {
+    img {
+      width: 100%;
+    }
+  }
+  &-rate {
+    padding: .3rem .7rem;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    z-index: 5;
+    color: #28a745;
+    font-weight: 900;
+    background: beige;
+    border-radius: 5px;
+  }
+  &-genre {
+    color: #666666;
+  }
+  &-title {
+    font-size: 18px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+  }
+}
